@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+tools/.cache/
+__pycache__/
+uploads/*
+!uploads/README.md

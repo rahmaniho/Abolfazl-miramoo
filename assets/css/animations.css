@@ -1,0 +1,355 @@
+/* ==========================================================================
+   ابو‌لفضل میرعمو — لندینگ پیج سینمایی
+   فایل ۳ از ۳: «حرکت» — کی‌فریم‌ها، ورود با اسکرول، موج اسکرول بخش‌ها،
+                و احترام کامل به prefers-reduced-motion
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- ورود با اسکرول */
+/* اگر جاوااسکریپت اجرا نشود، همه‌ی محتوا بدون انیمیشن دیده می‌شود. */
+html:not(.js) .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition: opacity 0.95s var(--ease-out), transform 0.95s var(--ease-out),
+    filter 0.95s var(--ease-out);
+  transition-delay: var(--d, 0s);
+  filter: blur(6px);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+.reveal--start {
+  transform: translate3d(46px, 12px, 0);
+}
+.reveal--end {
+  transform: translate3d(-46px, 12px, 0);
+}
+.reveal--scale {
+  transform: scale(0.93);
+}
+.reveal--blur {
+  transform: none;
+  filter: blur(14px);
+}
+
+/* ورود اجزای هیرو (پس از بارگذاری) */
+.hero [data-hero-item] {
+  opacity: 0;
+  animation: heroIn 1.05s var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 0.13s + 0.15s);
+}
+
+/* ---------------------------------------------------------------- موج اسکرول بخش‌ها */
+/* با ورود هر بخش، یک «حلقه‌ی صوتی» از بالای بخش باز می‌شود. */
+.section.ripple::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 203, 106, 0.75), transparent);
+  transform: scaleX(0);
+  opacity: 0;
+}
+.section.ripple::after {
+  content: "";
+  position: absolute;
+  /* مختصات فیزیکی (left) تا translate(-50%) در RTL آینه نشود */
+  left: 50%;
+  top: 0;
+  width: min(820px, 96vw);
+  aspect-ratio: 1 / 0.24;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.18);
+  opacity: 0;
+  pointer-events: none;
+}
+.section.ripple.is-visible::before {
+  animation: rippleLine 1.5s var(--ease-out) forwards;
+}
+.section.ripple.is-visible::after {
+  animation: rippleOut 2s var(--ease-out) 0.05s forwards;
+}
+
+/* ---------------------------------------------------------------- کی‌فریم‌ها */
+@keyframes watermarkDrift {
+  from {
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.97);
+    opacity: 0.055;
+  }
+  to {
+    transform: translate(-50%, -52%) rotate(-2deg) scale(1.04);
+    opacity: 0.1;
+  }
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes beamSway {
+  from {
+    transform: rotate(-13deg) scaleY(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: rotate(-4deg) scaleY(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes noteFloat {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-6deg);
+  }
+  35% {
+    transform: translate3d(10px, -26px, 0) rotate(4deg);
+  }
+  70% {
+    transform: translate3d(-8px, -52px, 0) rotate(-3deg);
+  }
+  100% {
+    transform: translate3d(0, -78px, 0) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+@keyframes noteBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(6deg);
+  }
+}
+
+@keyframes caretBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes eqBar {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.55);
+    opacity: 0.85;
+  }
+  75% {
+    transform: scaleY(0.88);
+    opacity: 1;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 203, 106, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(232, 203, 106, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 203, 106, 0);
+  }
+}
+
+@keyframes wheelDrop {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, 14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes tickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes clefGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+    filter: drop-shadow(0 0 0 rgba(240, 169, 59, 0));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 26px rgba(240, 169, 59, 0.5));
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+}
+
+@keyframes micPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(240, 169, 59, 0));
+  }
+  50% {
+    transform: scale(1.09);
+    filter: drop-shadow(0 0 14px rgba(240, 169, 59, 0.55));
+  }
+}
+
+@keyframes rippleLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rippleOut {
+  0% {
+    transform: translate(-50%, -50%) scale(0.18);
+    opacity: 0;
+  }
+  22% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.12);
+    opacity: 0;
+  }
+}
+
+@keyframes keyPress {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+  40% {
+    transform: translateY(4px) scaleY(0.985);
+  }
+}
+
+/* نواختن خودکار پیانو (تنها برای جلب توجه، بدون صدا) */
+.piano--auto .piano__key:nth-child(3) {
+  animation: keyPress 6s var(--ease-soft) infinite;
+}
+.piano--auto .piano__key:nth-child(11) {
+  animation: keyPress 6s var(--ease-soft) 2s infinite;
+}
+.piano--auto .piano__key:nth-child(18) {
+  animation: keyPress 6s var(--ease-soft) 3.9s infinite;
+}
+
+/* درخشش ملایم روی تصاویر و کارت‌ها هنگام اسکرول */
+.glow-on-scroll {
+  box-shadow: 0 0 0 0 rgba(240, 169, 59, 0);
+  transition: box-shadow 0.9s var(--ease-out);
+}
+.glow-on-scroll.is-visible {
+  box-shadow: 0 30px 80px -40px rgba(240, 169, 59, 0.45);
+}
+
+/* ---------------------------------------------------------------- کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .hero [data-hero-item] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero__wave,
+  .starfield,
+  .hero__beams,
+  .hero__notes {
+    display: none !important;
+  }
+  .section.ripple::before,
+  .section.ripple::after {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="کاور نمونه‌کار — اجرای زنده">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141210"/>
+      <stop offset="0.55" stop-color="#0C0B0A"/>
+      <stop offset="1" stop-color="#060606"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0" stop-color="#F0A93B" stop-opacity="0.30"/>
+      <stop offset="0.45" stop-color="#D4AF37" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8CB6A"/>
+      <stop offset="0.55" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#C9A227"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D4AF37" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E8CB6A" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8CB6A" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#C9A227" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="softer" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="60" rx="360" ry="200" fill="url(#glow)"/>
+    <path d="M 104 0 L 196 0 L 180 410 L -60 410 Z" fill="url(#fade)" opacity="0.30"/>
+    <path d="M 354 0 L 446 0 L 420 410 L 180 410 Z" fill="url(#fade)" opacity="0.26"/>
+    <path d="M 604 0 L 696 0 L 860 410 L 620 410 Z" fill="url(#fade)" opacity="0.22"/>
+  <rect x="0" y="404" width="800" height="96" fill="#070706"/>
+  <line x1="0" y1="404" x2="800" y2="404" stroke="url(#line)" stroke-width="1.6"/>
+    <g opacity="0.92"><circle cx="100.0" cy="404.0" r="20.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 100.0 470 q 0 -46 100.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="175.0" cy="402.8" r="26.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 175.0 470 q 0 -46 175.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="250.0" cy="401.6" r="32.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 250.0 470 q 0 -46 250.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="325.0" cy="404.0" r="20.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 325.0 470 q 0 -46 325.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="400.0" cy="402.8" r="26.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 400.0 470 q 0 -46 400.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="475.0" cy="401.6" r="32.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 475.0 470 q 0 -46 475.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="550.0" cy="404.0" r="20.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 550.0 470 q 0 -46 550.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="625.0" cy="402.8" r="26.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 625.0 470 q 0 -46 625.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+    <g opacity="0.92"><circle cx="700.0" cy="401.6" r="32.0" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.35"/><path d="M 700.0 470 q 0 -46 700.0 -46 q 34 0 34 46 z" fill="#15120E" stroke="#D4AF37" stroke-opacity="0.30"/></g>
+  <rect x="22" y="22" width="756" height="456" fill="none" stroke="#D4AF37" stroke-opacity="0.22" stroke-width="1" rx="10"/></svg>
