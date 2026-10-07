@@ -1,0 +1,21 @@
+{
+  "name": "abolfazl-miramoo-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "لندینگ پیج سینمایی و RTL برای ابوالفضل میرعمو — مدرس، آهنگساز، خواننده و مجری",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "artwork": "python3 tools/make-artwork.py",
+    "icons": "node tools/make-icons.mjs --inject",
+    "test": "node tools/test-dom.mjs"
+  },
+  "devDependencies": {
+    "@mdi/svg": "^7.4.47",
+    "lucide-static": "^1.52.0",
+    "simple-icons": "^16.34.0",
+    "jsdom": "^30.1.2"
+  },
+  "comments": {
+    "note": "خودِ سایت هیچ وابستگی‌ای ندارد؛ devDependencies فقط برای بازتولید اسپرایت آیکون‌هاست."
+  }
+}
