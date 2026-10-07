@@ -79,6 +79,17 @@ html:not(.js) .reveal {
 }
 
 /* ---------------------------------------------------------------- کی‌فریم‌ها */
+@keyframes watermarkDrift {
+  from {
+    transform: translate(-50%, -50%) rotate(-6deg) scale(0.97);
+    opacity: 0.055;
+  }
+  to {
+    transform: translate(-50%, -52%) rotate(-2deg) scale(1.04);
+    opacity: 0.1;
+  }
+}
+
 @keyframes heroIn {
   from {
     opacity: 0;

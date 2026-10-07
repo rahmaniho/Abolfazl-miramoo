@@ -10,8 +10,10 @@
 <meta name="theme-color" content="#0A0A0A">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://abolfazlmiramoo.ir/">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+<!-- 🔁 نشانه‌ی سایت: با اجرای tools/make-logo.py از تصویر لوگوی شما ساخته می‌شود -->
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 
 <!-- Open Graph / شبکه‌های اجتماعی -->
 <meta property="og:type" content="website">
@@ -24,6 +26,7 @@
 <meta property="og:image:width" content="1731">
 <meta property="og:image:height" content="909">
 <meta property="og:image:alt" content="پس‌زمینه‌ی مشکی سینمایی با موج‌های طلایی صدا و نام ابوالفضل میرعمو">
+<meta property="og:logo" content="https://abolfazlmiramoo.ir/assets/img/logo-mark.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ابوالفضل میرعمو | مدرس، آهنگساز، خواننده و مجری">
 <meta name="twitter:description" content="از آموزش تا اجرا؛ همراه شما در مسیر موسیقی. رزرو مشاوره: ۰۹۱۹۲۵۸۶۵۵۹">
@@ -51,6 +54,7 @@
   "telephone": "+989192586559",
   "url": "https://abolfazlmiramoo.ir/",
   "image": "https://abolfazlmiramoo.ir/assets/img/og-cover.jpg",
+  "logo": "https://abolfazlmiramoo.ir/assets/img/logo-mark.png",
   "knowsAbout": ["آموزش آواز", "صداسازی و سلفژ", "آهنگسازی", "تنظیم و میکس", "اجرای زنده", "مجری‌گری مراسم"],
   "areaServed": "ایران",
   "address": { "@type": "PostalAddress", "addressCountry": "IR", "addressLocality": "—" },
@@ -148,7 +152,9 @@
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
     <a class="brand" href="#hero" aria-label="ابوالفضل میرعمو — بازگشت به ابتدای صفحه">
-      <span class="brand__mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-note"></use></svg></span>
+      <span class="brand__mark" aria-hidden="true">
+        <img src="assets/img/logo-mark.png" width="42" height="42" alt="" decoding="async">
+      </span>
       <span class="brand__text">
         میرعمو
         <small>موسیقی · آموزش · اجرا</small>
@@ -193,6 +199,11 @@
     </div>
 
     <div class="hero__wave" aria-hidden="true"><canvas id="siri-wave"></canvas></div>
+
+    <!-- واترمارک نشانه‌ی برند در پس‌زمینه‌ی هیرو -->
+    <div class="hero__watermark" aria-hidden="true">
+      <img src="assets/img/logo-mark.png" width="512" height="512" alt="" decoding="async">
+    </div>
 
     <div class="hero__notes" aria-hidden="true">
       <span class="f-note f-note--1"><svg class="icon" aria-hidden="true"><use href="#i-note"></use></svg></span>
@@ -297,10 +308,12 @@
         <div class="portrait reveal reveal--scale">
           <span class="portrait__halo" aria-hidden="true"></span>
           <span class="portrait__ring" aria-hidden="true"></span>
-          <div class="portrait__inner">
-            <!-- 🔁 جای عکس شما: src را با تصویر پرتره‌ی واقعی عوض کنید (نسبت ۱:۱، حداقل ۸۰۰×۸۰۰ پیکسل) -->
-            <img src="assets/img/portrait-placeholder.svg" width="600" height="600"
-                 alt="پرتره‌ی ابوالفضل میرعمو، مدرس و خواننده" loading="lazy" decoding="async">
+          <!-- 🔁 جای تصویر شما:
+               این قاب فعلاً لوگوتایپ برند را نشان می‌دهد. وقتی عکس پرتره آماده شد،
+               فقط src را عوض کنید و کلاس «portrait__inner--logo» را بردارید (نسبت ۱:۱، حداقل ۸۰۰×۸۰۰). -->
+          <div class="portrait__inner portrait__inner--logo">
+            <img src="assets/img/logo-lockup.png" width="1024" height="625"
+                 alt="لوگوتایپ ابوالفضل میرعمو همراه با خط لاتین" loading="lazy" decoding="async">
           </div>
           <div class="portrait__tags" aria-hidden="true">
             <span class="portrait__tag portrait__tag--a"><svg class="icon"><use href="#i-cap"></use></svg>مدرس آواز</span>
@@ -523,7 +536,7 @@
       <span class="vinyl" aria-hidden="true">
         <span class="vinyl__grooves"></span>
         <span class="vinyl__disc"></span>
-        <span class="vinyl__label"><svg class="icon"><use href="#i-spotify"></use></svg></span>
+        <span class="vinyl__label"><img src="assets/img/logo-mark-light.png" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
       </span>
 
       <div class="portfolio__head">
@@ -788,6 +801,10 @@
 
   <!-- ============================================================ ۶) بنر اقدام ============================================================ -->
   <section class="cta-band" id="book" aria-labelledby="cta-title">
+    <div class="cta-band__watermark" aria-hidden="true">
+      <img src="assets/img/logo-mark.png" width="512" height="512" alt="" loading="lazy" decoding="async">
+    </div>
+
     <div class="container cta-band__inner">
       <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <h2 class="cta-band__title reveal" id="cta-title">
@@ -975,7 +992,9 @@
     <div class="site-footer__grid">
       <div>
         <a class="brand" href="#hero">
-          <span class="brand__mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-note"></use></svg></span>
+          <span class="brand__mark" aria-hidden="true">
+            <img src="assets/img/logo-mark.png" width="42" height="42" alt="" loading="lazy" decoding="async">
+          </span>
           <span class="brand__text">میرعمو<small>موسیقی · آموزش · اجرا</small></span>
         </a>
         <p>
